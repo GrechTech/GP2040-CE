@@ -1,6 +1,6 @@
 export default {
 	'header-text': 'Pin Mapping',
-	'sub-header-text': `Here you can configure what pin has what action. If you're unsure what button is connect to what pin, try out the pin viewer.`,
+	'sub-header-text': `If you're unsure what button is connect to what pin, try out the pin viewer.`,
 	'alert-text':
 		"Mapping buttons to pins that aren't connected or available can leave the device in non-functional state. To clear the invalid configuration go to the <2>Reset Settings</2> page.",
 	'pin-viewer': 'Pin viewer',
@@ -38,6 +38,8 @@ export default {
 		BUTTON_PRESS_A2: 'A2',
 		BUTTON_PRESS_L3: 'L3',
 		BUTTON_PRESS_R3: 'R3',
+		BUTTON_PRESS_A3: 'A3',
+		BUTTON_PRESS_A4: 'A4',
 		BUTTON_PRESS_FN: 'Function',
 		BUTTON_PRESS_DDI_UP: 'DDI Up',
 		BUTTON_PRESS_DDI_DOWN: 'DDI Down',
@@ -59,5 +61,6 @@ export default {
 		BUTTON_PRESS_MACRO_4: 'Macro 4',
 		BUTTON_PRESS_MACRO_5: 'Macro 5',
 		BUTTON_PRESS_MACRO_6: 'Macro 6',
+		CUSTOM_BUTTON_COMBO: 'Assigned to multi mapping',
 	},
 };

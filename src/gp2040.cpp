@@ -30,6 +30,7 @@
 #include "addons/input_macro.h"
 #include "addons/snes_input.h"
 #include "addons/rotaryencoder.h"
+#include "addons/i2c_gpio_pcf8575.h"
 
 // Pico includes
 #include "pico/bootrom.h"
@@ -103,6 +104,7 @@ void GP2040::setup() {
 	addons.LoadAddon(new SliderSOCDInput(), CORE0_INPUT);
 	addons.LoadAddon(new TiltInput(), CORE0_INPUT);
 	addons.LoadAddon(new RotaryEncoderInput(), CORE0_INPUT);
+	addons.LoadAddon(new PCF8575Addon(), CORE0_INPUT);
 
 	// Input override addons
 	addons.LoadAddon(new ReverseInput(), CORE0_INPUT);
@@ -182,12 +184,12 @@ void GP2040::setup() {
  * @brief Initialize standard input button GPIOs that are present in the currently loaded profile.
  */
 void GP2040::initializeStandardGpio() {
-	GpioAction* pinMappings = Storage::getInstance().getProfilePinMappings();
+	GpioMappingInfo* pinMappings = Storage::getInstance().getProfilePinMappings();
 	buttonGpios = 0;
 	for (Pin_t pin = 0; pin < (Pin_t)NUM_BANK0_GPIOS; pin++)
 	{
 		// (NONE=-10, RESERVED=-5, ASSIGNED_TO_ADDON=0, everything else is ours)
-		if (pinMappings[pin] > 0)
+		if (pinMappings[pin].action > 0)
 		{
 			gpio_init(pin);             // Initialize pin
 			gpio_set_dir(pin, GPIO_IN); // Set as INPUT
@@ -201,11 +203,11 @@ void GP2040::initializeStandardGpio() {
  * @brief Deinitialize standard input button GPIOs that are present in the currently loaded profile.
  */
 void GP2040::deinitializeStandardGpio() {
-	GpioAction* pinMappings = Storage::getInstance().getProfilePinMappings();
+	GpioMappingInfo* pinMappings = Storage::getInstance().getProfilePinMappings();
 	for (Pin_t pin = 0; pin < (Pin_t)NUM_BANK0_GPIOS; pin++)
 	{
 		// (NONE=-10, RESERVED=-5, ASSIGNED_TO_ADDON=0, everything else is ours)
-		if (pinMappings[pin] > 0)
+		if (pinMappings[pin].action > 0)
 		{
 			gpio_deinit(pin);
 		}
