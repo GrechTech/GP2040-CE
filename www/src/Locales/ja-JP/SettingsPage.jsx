@@ -1,11 +1,11 @@
 export default {
 	'auth-settings-label': '機器認証設定',
+	'no-mode-settings-text': '{{mode}}に関する設定項目はありません。',
 	'settings-header-text': '入力モード設定',
 	'gamepad-settings-header-text': 'コントローラ設定',
 	'input-mode-label': '入力モード',
 	'current-input-mode-label': '現在の入力モード',
 	'input-mode-extra-label': 'Switch タッチパッドと Share',
-	'ps4-report-hack': 'PS4応答速度ハック',
 	'input-mode-options': {
 		none: 'モード未選択',
 		'nintendo-switch': '任天堂Switch',
@@ -47,13 +47,34 @@ export default {
 		'first-win': '先入力優先',
 		off: '無効',
 	},
-	'profile-number-label': 'プロファイル番号',
+	'profile-label': 'プロファイル',
 	'debounce-delay-label': 'チャタリング除去ディレイ(ミリ秒)',
-	'ps4-compatibility-label':
-		'<strong>PS5互換性</<strong>のためには入力モードで「アケコン」を選択し、PSパススルーadd-onを有効化してください。<br/><strong>PS4互換性</strong>のためには入力モードで「コントローラ」を選択し、PS4モードadd-onを有効化してください(関連ファイルを持っている場合)',
+	'ps4-mode-explanation-text':
+		'PS4モードはGP2040-CEコントローラを認証済みPS4コントローラとして動作させることができます。',
+	'ps4-mode-warning-text':
+		'<span>⏳ 警告 ⏳:</span> 認証無しの場合8分でPS4はタイムアウトして切断します.',
+	'ps4-usb-host-mode-text':
+		'<span>補足: </span> USB 周辺機器が有効化されており、PS4に互換性のあるデバイスが接続されていることを確認してください。',
+	'ps4-id-mode-label': '識別モード',
+	'ps4-id-mode-explanation-text':
+		'<ul><li>コンソールモードはPS4接続時に利用してください。</li><li></li>リモート/エミュレーションモードはエミュレーションレイヤーとの接続やリモートプレイ環境でDualShock 4互換コントローラーが必要な際にのみ利用してください。</ul>',
+	'ps4-id-mode-options': {
+		console: 'コンソール',
+		emulation: 'リモート/エミュレーション',
+	},
+	'ps5-mode-explanation-text':
+		'PS5モードはGP2040-CEコントローラを認証済みPS5互換アケコンとして動作させることができます。',
+	'ps5-mode-warning-text':
+		'<span>⏳ 警告 ⏳:</span> 認証無しの場合8分でPS5はタイムアウトして切断します.',
+	'ps5-usb-host-mode-text':
+		'<span>補足: </span> USB 周辺機器が有効化されており、PS5に互換性のあるデバイスが接続されていることを確認してください。',
+	'xbone-mode-text':
+		'<span>補足: </span> XBox One モードで正しく認証するにははUSBホスト接続とUSBドングルが必要です。',
+	'xinput-mode-text':
+		'<span>補足:</span> Xinput モードはPCでは認証無しで利用可能です。Xbox 360本体で利用する場合は適切な認証用のUSBドングルを接続することで利用可能です。',
 	'hotkey-settings-label': 'ホットキー設定',
 	'hotkey-settings-sub-header':
-		"<1>Fn</1>スライダーは<3 exact='true' to='/pin-mapping'>端子割り当て設定</3>ページで割り当て可能なファンクションボタン機能を有効化します。<1>Fn</1>スライダーを有効化することで、選択されたホットキーと同時にファンクションボタンを押す様に設定できます。<5 />また、<1>None</1>を選択することでボタンの割り当てを解除できます。",
+		'<strong>Fn</strong>スライダーは<link_pinmap>端子割り当て設定</link_pinmap>ページで割り当て可能なファンクションボタン機能を有効化します。<strong>Fn</strong>スライダーを有効化することで、選択されたホットキーと同時にファンクションボタンを押す様に設定できます。<br />また、<strong>None</strong>を選択することでボタンの割り当てを解除できます。',
 	'hotkey-settings-warning':
 		'ファンクションボタンが未割り当てです。Fnスライダーは無効化されます。',
 	'hotkey-actions': {
@@ -86,13 +107,20 @@ export default {
 		's2-button': 'S2 ボタン',
 		'a1-button': 'A1 ボタン',
 		'a2-button': 'A2 ボタン',
+		'a3-button': 'A3 ボタン',
+		'a4-button': 'A4 ボタン',
+		'dpad-up': '十字キー上',
+		'dpad-down': '十字キー下',
+		'dpad-left': '十字キー左',
+		'dpad-right': '十字キー右',
 		'touchpad-button': 'タッチパッドボタン',
 		'load-profile-1': 'プロファイル #1をロード',
 		'load-profile-2': 'プロファイル #2をロード',
 		'load-profile-3': 'プロファイル #3をロード',
 		'load-profile-4': 'プロファイル #4をロード',
-		'next-profile': '次のプロファイルをロード',
 		'reboot-default': 'GP2040-CEを再起動',
+		'next-profile': '次のプロファイル',
+		'previous-profile': '前のプロファイル',
 	},
 	'forced-setup-mode-label': '強制セットアップモード',
 	'forced-setup-mode-options': {
